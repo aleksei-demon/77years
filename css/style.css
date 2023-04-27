@@ -1,0 +1,61 @@
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fcfdfe;
+  background: #ADD8E6;
+  color: #4c3f54;
+  font-family: verdana;
+}
+.main{
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  gap: 0.7px;
+  width: 90vw; 
+}
+.tile{ 
+  background: #739f3d;
+  width: 2.9vw;
+  height: 2vh;
+  overflow: hidden;
+}
+
+input{
+  border-radius: 26px; 
+   background: #fcfdfe;  
+}
+h1{
+  font-size: 2em;
+}
+h3{
+  font-size: 1.25em;
+}
+.h{
+  text-align: center;
+  display: block; 
+  padding: 1vh;
+   font-family: verdana;
+}
+form{
+  padding: 2vh;
+}
+
+@media screen and (orientation: landscape){
+  .main{
+    width: 50vw;
+  }
+  .tile{
+    width: 1.7vw;
+  }
+  input{
+    padding: 1vh 50px;
+  }
+}
+
+@media screen and (orientation: portrait){
+   input{
+    padding: 1vh 15px;
+     width: 35vw;
+  }
+}
