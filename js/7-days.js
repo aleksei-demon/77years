@@ -18,7 +18,7 @@ function appender(it = 'div', paste_to = '', hold = '', content = '', css_class 
     if (it == '') { item = document.createElement('div'); } else {
         item = document.createElement(it);
     }
-
+    if (it == 'input') { item.setAttribute('inputmode', 'numeric'); }
     if (hold != '') { item.setAttribute('placeholder', hold); }
     if (content != '') { item.innerHTML = content; }
     if (css_class != '') { item.setAttribute('class', css_class); }
