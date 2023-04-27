@@ -6,7 +6,7 @@ let body = document.querySelector('body');
 appender('h1', '', '', 'Прогресс вашей жизни', 'h', 'zagolovok');
 appender('section', '', '', '', 'main',);
 appender('form', '', '', '', '',);
-appender('h3', '', '', 'Введите дату своего рождения', 'h',);
+appender('h3', '', '', 'Введите дату своего рождения, или начала какого-либо дела', 'h',);
 
 gen(924, '', 'section', '', '', 'tile');
 
@@ -76,10 +76,23 @@ function age() {
     console.log(result);
 
     fill_tile(result);
-    document.querySelector('#zagolovok').innerHTML = `Прогресс вашей жизни ${result} месяцев`;
+    to_say(result);
 }
 
+function to_say(result) {
+    zagolovok = document.querySelector('#zagolovok');
 
+    if ((result % 10) == 5 || (result % 10) == 6 ||
+        (result % 10) == 7 || (result % 10) == 8 || (result % 10) == 9 ||
+        result == 11 || result == 111 || result == 12 || result == 112 ||
+        result == 13 || result == 113 || result == 14 || result == 114) {
+        zagolovok.innerHTML = `Прогресс вашей жизни ${result} месяцев`;
+    } else if ((result % 10) == 4 || (result % 10) == 3 || (result % 10) == 2) {
+        zagolovok.innerHTML = `Прогресс вашей жизни ${result} месяца`;
+    } else if (result == 1 || (result % 10) == 1) {
+        zagolovok.innerHTML = `Прогресс вашей жизни ${result} месяц`;
+    } else { zagolovok.innerHTML = `Прогресс вашей жизни ${result} месяцев`; }
+}
 
 
 
