@@ -13,6 +13,10 @@ gen(924, '', 'section', '', '', 'tile');
 appender('input', 'form', 'год, 4 цифры', '', 'y', 'y');
 appender('input', 'form', 'мес (1 - 12)', '', 'm', 'm');
 
+let y = document.querySelector('#y');
+let m = document.querySelector('#m');
+y.oninput = age; m.oninput = age;
+
 function appender(it = 'div', paste_to = '', hold = '', content = '', css_class = '', id = '') {
     let item = '';
     if (it == '') { item = document.createElement('div'); } else {
@@ -55,12 +59,6 @@ function fill_tile(num) {
         }
     }
 }
-
-let y = document.querySelector('#y');
-let m = document.querySelector('#m');
-
-let month_count = 0;
-y.oninput = age; m.oninput = age;
 
 function age() {
     if (isNaN(+y.value) || y.value.length > 4 || y.value.includes('.')) { y.value = ''; return }
